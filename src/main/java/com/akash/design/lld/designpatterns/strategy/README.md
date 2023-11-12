@@ -4,4 +4,4 @@ When two or more child classses have same functionalities, implementing those me
 
 In this example, PassangerVehicle use normal drive but Sports and Offroad Vehicle both use the same Special drive. So we create a Drive strategy and pass down the strategy via constuctor injection
 
-![Strategy Design Pattern](./diagram/diag.png)
+![Strategy Design Pattern](../diagram/strategy.png)

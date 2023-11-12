@@ -1,0 +1,53 @@
+@startuml observer design pattern
+
+interface StocksObservable {
+    +void add(NotificationAlertObserver observer)
+    +void remove(NotificationAlertObserver observer)
+    +void notifyObservers()
+    +void setStock(int stock)
+    +int getStock()
+}
+
+interface NotificationAlertObserver {
+    +void update()
+}
+
+class PhoneAlertObserverImpl implements NotificationAlertObserver {
+    -StocksObservable observable
+    -String phone
+
+    +PhoneAlertObserverImpl(StocksObservable observable, String phone)
+    +void update()
+}
+
+class EmailAlertObserverImpl implements NotificationAlertObserver {
+
+    -StocksObservable observable
+    -String email
+
+    +EmailAlertObserverImpl(StocksObservable observable, String email)
+    +void update()
+
+}
+
+class IphoneObservableImpl implements StocksObservable {
+
+    -int stock
+    -List<NotificationAlertObserver> observersList
+
+    +IphoneObservableImpl()
+    +void add(NotificationAlertObserver observer)
+    +void remove(NotificationAlertObserver observer)
+    +void notifyObservers()
+    +void setStock(int stock)
+    +int getStock()
+
+}
+
+PhoneAlertObserverImpl --* StocksObservable : has a
+EmailAlertObserverImpl --* StocksObservable : has a
+
+IphoneObservableImpl --* NotificationAlertObserver : has a
+
+@enduml
+
