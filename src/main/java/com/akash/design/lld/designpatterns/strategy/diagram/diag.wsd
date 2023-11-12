@@ -1,0 +1,38 @@
+@startuml strategy design pattern
+
+interface DriveStrategy {
+    +drive()
+}
+
+class NormalDrive implements DriveStrategy {
+
+    +drive()
+}
+
+class SpecialDrive implements DriveStrategy {
+
+    +drive()
+}
+
+class Vehicle {
+    -DriveStrategy driveStrategy
+
+    +Vehicle(DriveStrategy driveStrategy)
+    +void drive()
+}
+
+class SportsVehicle extends Vehicle {
+
+    +SportsVehicle()
+
+}
+
+class PassangerVehicle extends Vehicle {
+
+    +PassangerVehicle()
+
+}
+
+Vehicle --* DriveStrategy
+@enduml
+

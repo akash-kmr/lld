@@ -1,4 +1,4 @@
-package com.akash.design.lld.strategy;
+package com.akash.design.lld.designpatterns.strategy;
 
 public class Vehicle {
     private DriveStrategy driveStrategy;
@@ -7,7 +7,7 @@ public class Vehicle {
         this.driveStrategy = driveStrategy;
     }
 
-    void drive() {
+    public void drive() {
         driveStrategy.drive();;
     }
 }

@@ -1,4 +1,4 @@
-package com.akash.design.lld.strategy;
+package com.akash.design.lld.designpatterns.strategy;
 
 public class OffroadVehicle extends Vehicle {
 
