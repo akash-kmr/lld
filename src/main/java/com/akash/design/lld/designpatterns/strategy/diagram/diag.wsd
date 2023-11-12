@@ -33,6 +33,12 @@ class PassangerVehicle extends Vehicle {
 
 }
 
+class OffroadVehicle extends Vehicle {
+
+    +OffroadVehicle()
+
+}
+
 Vehicle --* DriveStrategy
 @enduml
 
