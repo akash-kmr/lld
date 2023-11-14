@@ -1,0 +1,40 @@
+@startuml strategy design pattern
+
+abstract class BasePizza {
+    +{abstract} int getPrice()
+}
+
+class VegDelightBase extends BasePizza {
+    +int getPrice()
+}
+
+class MargheritaBase extends BasePizza {
+    +int getPrice()
+}
+
+abstract class Topping extends BasePizza {
+
+    #BasePizza basePizza;
+
+    #Topping(BasePizza basePizza)
+}
+
+class CheezeTopping extends Topping {
+
+    +CheezeTopping(BasePizza basePizza)
+
+    +int getPrice()
+
+}
+
+class MushroomTopping extends Topping {
+
+    +MushroomTopping(BasePizza basePizza)
+
+    +int getPrice()
+
+}
+
+Topping --* BasePizza : has a
+@enduml
+
